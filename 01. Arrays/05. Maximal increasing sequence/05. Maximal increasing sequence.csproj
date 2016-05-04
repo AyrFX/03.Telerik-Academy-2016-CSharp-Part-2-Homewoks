@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3DD86259-6D6A-47B2-8EB3-D3DD9409E3C7}</ProjectGuid>
+    <ProjectGuid>{F8B28511-28E8-4F69-9894-EC471C436D3F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_04.Maximal_sequence</RootNamespace>
-    <AssemblyName>_04.Maximal_sequence</AssemblyName>
+    <RootNamespace>_05.Maximal_increasing_sequence</RootNamespace>
+    <AssemblyName>_05.Maximal_increasing_sequence</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MaximalSequence.cs" />
+    <Compile Include="MaximaIncreasingSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
