@@ -13,13 +13,13 @@ class PrimeNumbers
 
         for (int i = 2; i < sieve.Length; i++)
         {
-            if (sieve[i] == false && i != 2)
+            if (sieve[i] == false)
             {
                 continue;
             }
-            for (int j = i+1; j < sieve.Length; j++)
+            for (int j = i; j < sieve.Length; j+=i)
             {
-                if (j % i == 0)
+                if (j % i == 0 && j != i)
                 {
                     sieve[j] = false;
                 }
@@ -34,5 +34,10 @@ class PrimeNumbers
                 return;
             }
         }
+
+        //for (int i = 0; i < sieve.Length; i++)
+        //{
+        //    Console.WriteLine("index {0} - {1}", i, sieve[i]);
+        //}
     }
 }
