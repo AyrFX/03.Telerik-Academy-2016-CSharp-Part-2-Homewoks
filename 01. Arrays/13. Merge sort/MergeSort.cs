@@ -56,45 +56,34 @@ class MergeSort
         secondArray.CopyTo(outputArray, firstArray.Length);
         Array.Sort(outputArray);
 
-        //for (int i = 0; i < outputArray.Length; i++)
-        //{
-        //    if (i / 2 > firstArray.Length - 1)
-        //    {
-        //        if (secondArray[i / 2] > outputArray[i-1])
-        //        {
-        //            outputArray[i] = secondArray[i / 2];
-        //        }
-        //        else
-        //        {
-        //            int temp = outputArray[i - 1];
-        //            outputArray[i - 1] = secondArray[i / 2];
-        //            outputArray[i] = temp;
-        //        }
-
-        //    }
-        //    else if (i / 2 > secondArray.Length - 1)
-        //    {
-        //        if (firstArray[i / 2] > outputArray[i-1])
-        //        {
-        //            outputArray[i] = firstArray[i / 2];
-        //        }
-        //        else
-        //        {
-        //            int temp = outputArray[i - 1];
-        //            outputArray[i - 1] = firstArray[i / 2];
-        //            outputArray[i] = temp;
-        //        }
-
-        //    }
-        //    else if (i % 2 == 0)
-        //    {
-        //        outputArray[i] = Math.Min(firstArray[i / 2], secondArray[i / 2]);
-        //    }
-        //    else
-        //    {
-        //        outputArray[i] = Math.Max(firstArray[i / 2], secondArray[i / 2]);
-        //    }
-        //}
+        int firstArrayCurrentIndex = 0, secondArrayCurrentIndex = 0, outputArrayCounter = 0;
+        while (outputArrayCounter < outputArray.Length)
+        {
+            if (firstArrayCurrentIndex >= firstArray.Length)
+            {
+                outputArray[outputArrayCounter] = secondArray[secondArrayCurrentIndex];
+                secondArrayCurrentIndex++;
+            }
+            else if (secondArrayCurrentIndex >= secondArray.Length)
+            {
+                outputArray[outputArrayCounter] = firstArray[firstArrayCurrentIndex];
+                firstArrayCurrentIndex++;
+            }
+            else
+            {
+                if (firstArray[firstArrayCurrentIndex] < secondArray[secondArrayCurrentIndex])
+                {
+                    outputArray[outputArrayCounter] = firstArray[firstArrayCurrentIndex];
+                    firstArrayCurrentIndex++;
+                }
+                else
+                {
+                    outputArray[outputArrayCounter] = secondArray[secondArrayCurrentIndex];
+                    secondArrayCurrentIndex++;
+                }
+            }
+            outputArrayCounter++;
+        }
         return outputArray;
     }
 }
