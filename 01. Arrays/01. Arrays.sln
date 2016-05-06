@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11. Binary search", "11. Bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "12. Index of letters", "12. Index of letters\12. Index of letters.csproj", "{0FF57E82-2085-4BCF-AC35-6EB69348C3C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13. Merge sort", "13. Merge sort\13. Merge sort.csproj", "{00CFE08A-AB99-4A83-9922-3540A75E7B5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{0FF57E82-2085-4BCF-AC35-6EB69348C3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FF57E82-2085-4BCF-AC35-6EB69348C3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FF57E82-2085-4BCF-AC35-6EB69348C3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CFE08A-AB99-4A83-9922-3540A75E7B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CFE08A-AB99-4A83-9922-3540A75E7B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CFE08A-AB99-4A83-9922-3540A75E7B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CFE08A-AB99-4A83-9922-3540A75E7B5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
