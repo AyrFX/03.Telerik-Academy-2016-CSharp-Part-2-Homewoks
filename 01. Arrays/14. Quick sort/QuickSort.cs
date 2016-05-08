@@ -55,51 +55,42 @@ class QuickSortAlgorithm
         }
         else
         {
+            int pivotValue = array[0];
+            List<int> leftOutputValues = new List<int>();
+            List<int> centerOutputValues = new List<int>();
+            List<int> rightOutputValues = new List<int>();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < pivotValue)
+                {
+                    leftOutputValues.Add(array[i]);
+                }
+                else if (array[i] == pivotValue)
+                {
+                    centerOutputValues.Add(array[i]);
+                }
+                else if (array[i] > pivotValue)
+                {
+                    rightOutputValues.Add(array[i]);
+                }
+            }
+
+            int[] outputArray = new int[0];
             if (position == ArrayPositions.left)
             {
-                int pivotIndex = (array.Length - 1) / 2;
-                int pivotValue = array[pivotIndex];
-                List <int> outputValues = new List<int>();
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (i == pivotIndex)
-                    {
-                        continue;
-                    }
-                    if (array[i] < pivotValue)
-                    {
-                        outputValues.Add(array[i]);
-                    }
-                }
-                int[] outputArray = outputValues.ToArray();
-                return JoinArrays(QuickSort(outputArray, ArrayPositions.left), QuickSort(outputArray, ArrayPositions.center), QuickSort(outputArray, ArrayPositions.right));
+                outputArray = leftOutputValues.ToArray();
             }
             else if (position == ArrayPositions.center)
             {
-                int pivotIndex = (array.Length - 1) / 2;
-                int[] outputArray = new int[1];
-                outputArray[0] = array[pivotIndex];
+                outputArray = centerOutputValues.ToArray();
                 return outputArray;
             }
-            else
+            else if (position == ArrayPositions.right)
             {
-                int pivotIndex = (array.Length - 1) / 2;
-                int pivotValue = array[pivotIndex];
-                List<int> outputValues = new List<int>();
-                for (int i = 0; i < array.Length; i++)
-                {
-                    if (i == pivotIndex)
-                    {
-                        continue;
-                    }
-                    if (array[i] >= pivotValue)
-                    {
-                        outputValues.Add(array[i]);
-                    }
-                }
-                int[] outputArray = outputValues.ToArray();
-                return JoinArrays(QuickSort(outputArray, ArrayPositions.left), QuickSort(outputArray, ArrayPositions.center), QuickSort(outputArray, ArrayPositions.right));
+                outputArray = rightOutputValues.ToArray();
             }
+
+            return JoinArrays(QuickSort(outputArray, ArrayPositions.left), QuickSort(outputArray, ArrayPositions.center), QuickSort(outputArray, ArrayPositions.right));
         }
     }
 
@@ -113,128 +104,10 @@ class QuickSortAlgorithm
     static int[] JoinArrays(int[] leftArray, int[] centerArray, int[] rightArray)
     {
         List<int> outputValues = new List<int>();
+        outputValues.AddRange(leftArray);
+        outputValues.AddRange(centerArray);
+        outputValues.AddRange(rightArray);
 
-        int emptyArrays = 0;
-        if (leftArray.Length < 1)
-        {
-            emptyArrays++;
-        }
-        if (centerArray.Length < 1)
-        {
-            emptyArrays++;
-        }
-        if (rightArray.Length < 1)
-        {
-            emptyArrays++;
-        }
-
-        if (emptyArrays == 3)
-        {
-            return new int[0];
-        }
-        else if (emptyArrays == 2)
-        {
-            if (leftArray.Length > 0)
-            {
-                outputValues.AddRange(leftArray);
-            }
-            else if (centerArray.Length > 0)
-            {
-                outputValues.AddRange(centerArray);
-            }
-            else
-            {
-                outputValues.AddRange(rightArray);
-            }
-        }
-        else if (emptyArrays == 1)
-        {
-            if (leftArray.Length < 1)
-            {
-                if (centerArray[0] < rightArray[0])
-                {
-                    outputValues.AddRange(centerArray);
-                    outputValues.AddRange(rightArray);
-                }
-                else
-                {
-                    outputValues.AddRange(rightArray);
-                    outputValues.AddRange(centerArray);
-                }
-            }
-            else if (centerArray.Length < 1)
-            {
-                if (leftArray[0] < rightArray[0])
-                {
-                    outputValues.AddRange(leftArray);
-                    outputValues.AddRange(rightArray);
-                }
-                else
-                {
-                    outputValues.AddRange(rightArray);
-                    outputValues.AddRange(leftArray);
-                }
-            }
-            else if (rightArray.Length < 1)
-            {
-                if (leftArray[0] < centerArray[0])
-                {
-                    outputValues.AddRange(leftArray);
-                    outputValues.AddRange(centerArray);
-                }
-                else
-                {
-                    outputValues.AddRange(centerArray);
-                    outputValues.AddRange(leftArray);
-                }
-            }
-        }
-        else
-        {
-            if (leftArray[0] <= centerArray[0] && leftArray[0] <= rightArray[0])
-            {
-                outputValues.AddRange(leftArray);
-                if (centerArray[0] <= rightArray[0])
-                {
-                    outputValues.AddRange(centerArray);
-                    outputValues.AddRange(rightArray);
-                }
-                else
-                {
-                    outputValues.AddRange(rightArray);
-                    outputValues.AddRange(centerArray);
-                }
-            }
-            else if (centerArray[0] <= leftArray[0] && centerArray[0] <= rightArray[0])
-            {
-                outputValues.AddRange(centerArray);
-                if (leftArray[0] <= rightArray[0])
-                {
-                    outputValues.AddRange(leftArray);
-                    outputValues.AddRange(rightArray);
-                }
-                else
-                {
-                    outputValues.AddRange(rightArray);
-                    outputValues.AddRange(leftArray);
-                }
-            }
-            else if (rightArray[0] <= leftArray[0] && rightArray[0] <= centerArray[0])
-            {
-                outputValues.AddRange(rightArray);
-                if (leftArray[0] <= centerArray[0])
-                {
-                    outputValues.AddRange(leftArray);
-                    outputValues.AddRange(centerArray);
-                }
-                else
-                {
-                    outputValues.AddRange(centerArray);
-                    outputValues.AddRange(leftArray);
-                }
-            }
-        }
-        
         return outputValues.ToArray();
     }
 }
