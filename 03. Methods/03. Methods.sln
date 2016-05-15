@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. English digit", "03. En
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Appearance count", "04. Appearance count\04. Appearance count.csproj", "{1A1FD22C-D572-4346-B130-3DC557185A63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Larger than neighbours", "05. Larger than neighbours\05. Larger than neighbours.csproj", "{F5F7A4AA-27B0-4C9D-871F-F4B247779690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1A1FD22C-D572-4346-B130-3DC557185A63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A1FD22C-D572-4346-B130-3DC557185A63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A1FD22C-D572-4346-B130-3DC557185A63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F7A4AA-27B0-4C9D-871F-F4B247779690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F7A4AA-27B0-4C9D-871F-F4B247779690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F7A4AA-27B0-4C9D-871F-F4B247779690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F7A4AA-27B0-4C9D-871F-F4B247779690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
