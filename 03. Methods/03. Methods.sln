@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Reverse number", "07. R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Number as array", "08. Number as array\08. Number as array.csproj", "{DFEE57D7-A442-4DB9-B0C4-91B52AAB7FC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. Sorting array", "09. Sorting array\09. Sorting array.csproj", "{FBF584D0-5DA4-4BA5-A4A4-802EEE40F7DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{DFEE57D7-A442-4DB9-B0C4-91B52AAB7FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFEE57D7-A442-4DB9-B0C4-91B52AAB7FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFEE57D7-A442-4DB9-B0C4-91B52AAB7FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBF584D0-5DA4-4BA5-A4A4-802EEE40F7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF584D0-5DA4-4BA5-A4A4-802EEE40F7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF584D0-5DA4-4BA5-A4A4-802EEE40F7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF584D0-5DA4-4BA5-A4A4-802EEE40F7DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
