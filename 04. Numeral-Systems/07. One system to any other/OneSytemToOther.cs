@@ -24,7 +24,7 @@ class OneSytemToOther
 
         for (int i = number.Length - 1; i >= 0; i--)
         {
-            resultNumber += (long)(GetDigitValue(number[i]) * Math.Pow(fromBase, number.Length - i - 1));
+            resultNumber += (GetDigitValue(number[i]) * Power(fromBase, (byte)(number.Length - i - 1)));
         }
 
         return resultNumber;
@@ -128,5 +128,16 @@ class OneSytemToOther
             default:
                 return ' ';
         }
+    }
+
+    static long Power(byte number, byte power)
+    {
+        long result = 1;
+        for (int i = 0; i < power; i++)
+        {
+            result *= number;
+        }
+
+        return result;
     }
 }
