@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Triangle surface by thr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. Triangle surface - sides and an angle", "06. Triangle surface - sides and an angle\06. Triangle surface - sides and an angle.csproj", "{EC00413D-C23A-4C30-9A56-802BE00E329F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. Workdays", "07. Workdays\07. Workdays.csproj", "{CED903FF-F05B-4B41-98E4-C2434337BCBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. Sum integers", "08. Sum integers\08. Sum integers.csproj", "{3CF30869-CF7E-40AB-82D9-0BC52B4586C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{EC00413D-C23A-4C30-9A56-802BE00E329F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC00413D-C23A-4C30-9A56-802BE00E329F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC00413D-C23A-4C30-9A56-802BE00E329F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED903FF-F05B-4B41-98E4-C2434337BCBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED903FF-F05B-4B41-98E4-C2434337BCBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED903FF-F05B-4B41-98E4-C2434337BCBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED903FF-F05B-4B41-98E4-C2434337BCBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF30869-CF7E-40AB-82D9-0BC52B4586C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF30869-CF7E-40AB-82D9-0BC52B4586C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF30869-CF7E-40AB-82D9-0BC52B4586C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF30869-CF7E-40AB-82D9-0BC52B4586C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
