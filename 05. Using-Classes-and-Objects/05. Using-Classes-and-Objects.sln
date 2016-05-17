@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Day of week", "03. Day 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Triangle surface by side and altitude", "04. Triangle surface by side and altitude\04. Triangle surface by side and altitude.csproj", "{D2BC6306-99E9-4279-8855-1F664354F0F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Triangle surface by three sides", "05. Triangle surface by three sides\05. Triangle surface by three sides.csproj", "{78614989-C485-4DEE-8820-2030AD4B8C25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D2BC6306-99E9-4279-8855-1F664354F0F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2BC6306-99E9-4279-8855-1F664354F0F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2BC6306-99E9-4279-8855-1F664354F0F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78614989-C485-4DEE-8820-2030AD4B8C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78614989-C485-4DEE-8820-2030AD4B8C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78614989-C485-4DEE-8820-2030AD4B8C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78614989-C485-4DEE-8820-2030AD4B8C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
