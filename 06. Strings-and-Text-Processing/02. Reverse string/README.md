@@ -20,3 +20,6 @@
 |:------:|:------:|
 | sample | elpmas |
 | somestring | gnirtsemos |
+
+## Submission
+- Submit your code [here](http://bgcoder.com/Contests/Compete/Index/320#0)
