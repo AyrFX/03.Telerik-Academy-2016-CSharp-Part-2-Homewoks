@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Correct brackets", "03.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Sub-string in text", "04. Sub-string in text\04. Sub-string in text.csproj", "{96D911A8-10B4-45DA-BD7F-D90668932EF3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Parse tags", "05. Parse tags\05. Parse tags.csproj", "{87E0979A-3C56-49B9-9605-F59F83D26601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. String length", "06. String length\06. String length.csproj", "{17F051B5-77FC-43A6-BE35-8F15D67E04FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{96D911A8-10B4-45DA-BD7F-D90668932EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96D911A8-10B4-45DA-BD7F-D90668932EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96D911A8-10B4-45DA-BD7F-D90668932EF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E0979A-3C56-49B9-9605-F59F83D26601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E0979A-3C56-49B9-9605-F59F83D26601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E0979A-3C56-49B9-9605-F59F83D26601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E0979A-3C56-49B9-9605-F59F83D26601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F051B5-77FC-43A6-BE35-8F15D67E04FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F051B5-77FC-43A6-BE35-8F15D67E04FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F051B5-77FC-43A6-BE35-8F15D67E04FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F051B5-77FC-43A6-BE35-8F15D67E04FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
