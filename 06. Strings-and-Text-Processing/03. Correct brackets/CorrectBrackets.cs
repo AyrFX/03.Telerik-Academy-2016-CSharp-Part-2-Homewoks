@@ -25,6 +25,13 @@ class CorrectBrackets
             }
         }
 
-        Console.WriteLine("Correct");
+        if (openBracket == closeBracket)
+        {
+            Console.WriteLine("Correct");
+        }
+        else
+        {
+            Console.WriteLine("Incorrect");
+        }
     }
 }
