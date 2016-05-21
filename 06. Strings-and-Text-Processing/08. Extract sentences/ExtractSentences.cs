@@ -19,7 +19,7 @@ class ExtractSentences
         for (int i = 0; i < sentences.Length; i++)
         {
             string currentSentence = sentences[i].ToLower();
-            if (currentSentence.IndexOf(word) > 0)
+            if (currentSentence.IndexOf(word) > -1)
             {
                 if (!IsWord(currentSentence, word))
                 {
@@ -38,9 +38,10 @@ class ExtractSentences
 
     static bool IsWord(string text, string word)
     {
-        while(text.IndexOf(word) > 0)
+        int start = 0;
+        while(text.IndexOf(word, start) > -1)
         {
-            int wordStart = text.IndexOf(word);
+            int wordStart = text.IndexOf(word, start);
             char prevSymbol;
             bool frontDelimiter;
             if (wordStart > 0)
@@ -61,7 +62,7 @@ class ExtractSentences
                 frontDelimiter = true;
             }
 
-            int wordEnd = text.IndexOf(word) + word.Length;
+            int wordEnd = text.IndexOf(word, start) + word.Length;
             char nextSymbol;
             bool endDelimiter;
             if (wordEnd < text.Length - 1)
@@ -82,7 +83,8 @@ class ExtractSentences
                 endDelimiter = true;
             }
 
-            text = text.Remove(wordStart, wordEnd - wordStart);
+            //text = text.Remove(wordStart, wordEnd - wordStart);
+            start = wordEnd - 1;
 
             if (frontDelimiter && endDelimiter)
             {
