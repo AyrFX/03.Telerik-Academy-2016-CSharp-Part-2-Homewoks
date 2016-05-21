@@ -18,9 +18,11 @@ class ExtractSentences
         //string[] senteces = Regex.Split(text, @"(?<=[\.!\?])\s+");
         for (int i = 0; i < sentences.Length; i++)
         {
-            if (sentences[i].IndexOf(word) > 0 || sentences[i].IndexOf(word.ToUpper()) > 0 || sentences[i].IndexOf(word.ToLower()) > 0)
+            string currentSentence = sentences[i].ToLower();
+            string currentWord = word.ToLower();
+            if (sentences[i].IndexOf(word) > 0)
             {
-                if (!IsWord(sentences[i], word) && !IsWord(sentences[i], word.ToUpper()) && !IsWord(sentences[i], word.ToLower()))
+                if (!IsWord(sentences[i], word))
                 {
                     continue;
                 }
@@ -45,7 +47,8 @@ class ExtractSentences
             if (wordStart > 0)
             {
                 prevSymbol = text[wordStart - 1];
-                if (prevSymbol < 65 || (prevSymbol > 90 && prevSymbol < 97) || prevSymbol > 122)
+                //if (prevSymbol < 65 || (prevSymbol > 90 && prevSymbol < 97) || prevSymbol > 122)
+                if (!char.IsLetter(prevSymbol))
                 {
                     frontDelimiter = true;
                 }
@@ -65,7 +68,8 @@ class ExtractSentences
             if (wordEnd < text.Length - 1)
             {
                 nextSymbol = text[wordEnd];
-                if (nextSymbol < 65 || (nextSymbol > 90 && nextSymbol < 97) || nextSymbol > 122)
+                //if (nextSymbol < 65 || (nextSymbol > 90 && nextSymbol < 97) || nextSymbol > 122)
+                if (!char.IsLetter(nextSymbol))
                 {
                     endDelimiter = true;
                 }
