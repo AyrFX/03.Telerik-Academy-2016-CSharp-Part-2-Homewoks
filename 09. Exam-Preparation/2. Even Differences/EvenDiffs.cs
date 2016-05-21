@@ -6,14 +6,14 @@ class EvenDiffs
     static void Main()
     {
         string[] sequence = Console.ReadLine().Split(' ');
-        int[] numbers = Array.ConvertAll(sequence, int.Parse);
+        long[] numbers = Array.ConvertAll(sequence, long.Parse);
 
         int currentIndex = 1;
         BigInteger differencesSum = 0;
-        uint currentDifference;
+        long currentDifference;
         while (currentIndex < numbers.Length)
         {
-            currentDifference = (uint)Math.Abs(numbers[currentIndex] - numbers[currentIndex - 1]);
+            currentDifference = Math.Abs(numbers[currentIndex] - numbers[currentIndex - 1]);
             if (currentDifference % 2 == 0)
             {
                 currentIndex += 2;
