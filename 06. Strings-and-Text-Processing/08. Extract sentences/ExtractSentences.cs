@@ -5,7 +5,7 @@ class ExtractSentences
 {
     static void Main()
     {
-        string word = Console.ReadLine();
+        string word = Console.ReadLine().ToLower();
         string text = Console.ReadLine();
 
         string outputText = "";
@@ -19,10 +19,9 @@ class ExtractSentences
         for (int i = 0; i < sentences.Length; i++)
         {
             string currentSentence = sentences[i].ToLower();
-            string currentWord = word.ToLower();
-            if (sentences[i].IndexOf(word) > 0)
+            if (currentSentence.IndexOf(word) > 0)
             {
-                if (!IsWord(sentences[i], word))
+                if (!IsWord(currentSentence, word))
                 {
                     continue;
                 }
