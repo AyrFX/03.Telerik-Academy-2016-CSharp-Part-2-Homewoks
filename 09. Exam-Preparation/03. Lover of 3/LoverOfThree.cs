@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 class LoverOfThree
 {
@@ -19,44 +20,41 @@ class LoverOfThree
         }
 
         int movesCount = int.Parse(Console.ReadLine());
-        int[,] movesArray = new int[movesCount, 2];
-        for (int i = 0; i < movesArray.GetLength(0); i++)
+        List<string> moves = new List<string>();
+        for (int i = 0; i < movesCount; i++)
         {
-            string[] currentMove = Console.ReadLine().Split(' ');
-            switch (currentMove[0])
+
+            string[] currentMoves = Console.ReadLine().Split(' ');
+            int currentMovesCount = int.Parse(currentMoves[1]);
+            for (int j = 0; j < currentMovesCount; j++)
             {
-                case "RU":
-                    movesArray[i, 0] = (int)directions.RU;
-                    break;
-                case "UR":
-                    movesArray[i, 0] = (int)directions.UR;
-                    break;
-                case "LU":
-                    movesArray[i, 0] = (int)directions.LU;
-                    break;
-                case "UL":
-                    movesArray[i, 0] = (int)directions.UL;
-                    break;
-                case "DL":
-                    movesArray[i, 0] = (int)directions.DL;
-                    break;
-                case "LD":
-                    movesArray[i, 0] = (int)directions.LD;
-                    break;
-                case "RD":
-                    movesArray[i, 0] = (int)directions.RD;
-                    break;
-                case "DR":
-                    movesArray[i, 0] = (int)directions.DR;
-                    break;
+                moves.Add(currentMoves[0]);
             }
-            movesArray[i, 1] = int.Parse(currentMove[1]);
         }
-
-        for (int row = 0; row < movesArray.GetLength(0); row++)
+        
+        int currentRow = fieldRows - 1, currentCol = 0;
+        ulong sum = 0;
+        string lastDirection = moves[0], currentDirection = moves[0];
+        for (int i = 0; i < moves.Count; i++)
         {
-
+            currentDirection = moves[i];
+            if (currentDirection != lastDirection)
+            {
+                lastDirection = currentDirection;
+                continue;
+            }
+            if (i > 0)
+            {
+                NextMove(ref currentRow, ref currentCol, moves[i], field);
+            }
+            sum += (ulong)field[currentRow, currentCol];
+            field[currentRow, currentCol] = 0;
+            lastDirection = currentDirection;
+            PrintArray(field);
+            Console.WriteLine(sum);
         }
+
+        Console.WriteLine(sum);
     }
 
     static void PrintArray(int[,] array)
@@ -68,6 +66,33 @@ class LoverOfThree
                 Console.Write(" {0:D2} ", array[row, col]);
             }
             Console.WriteLine();
+        }
+    }
+
+    static void NextMove(ref int currentRow, ref int currentCol, string directions, int[,] field)
+    {
+        int newRow = currentRow, newCol = currentCol;
+
+        if (directions.IndexOf("U") > -1)
+        {
+            newRow -= 1;
+        }
+        if (directions.IndexOf("R") > -1)
+        {
+            newCol += 1;
+        }
+        if (directions.IndexOf("D") > -1)
+        {
+            newRow += 1;
+        }
+        if (directions.IndexOf("L") > -1)
+        {
+            newCol -= 1;
+        }
+        if (0 <= newRow && newRow < field.GetLength(0) && 0 <= newCol && newCol < field.GetLength(1))
+        {
+            currentRow = newRow;
+            currentCol = newCol;
         }
     }
 }
