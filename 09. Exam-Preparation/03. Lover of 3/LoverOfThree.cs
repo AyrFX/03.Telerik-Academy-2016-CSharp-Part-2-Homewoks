@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 class LoverOfThree
 {
-    enum directions { RU, UR, LU, UL, DL, LD, RD, DR };
-
     static void Main()
     {
         string[] fieldDimensions = Console.ReadLine().Split(' ');
@@ -50,8 +48,6 @@ class LoverOfThree
             sum += (ulong)field[currentRow, currentCol];
             field[currentRow, currentCol] = 0;
             lastDirection = currentDirection;
-            PrintArray(field);
-            Console.WriteLine(sum);
         }
 
         Console.WriteLine(sum);
