@@ -4,18 +4,18 @@ class EnterNumbers
 {
     static void Main()
     {
-        string outputString = string.Empty;
+        string outputString = "1 < ";
         int lastNumber = 0, currentNumber;
 
         for (int i = 0; i < 10; i++)
         {
-            if (outputString != string.Empty)
+            if (i != 0)
             {
                 outputString += " < ";
             }
             if (outputString == string.Empty)
             {
-                currentNumber = ReadNumber(0, 100);
+                currentNumber = ReadNumber(1, 100);
             }
             else
             {
@@ -25,6 +25,7 @@ class EnterNumbers
             outputString += currentNumber;
         }
 
+        outputString += " < 100";
         Console.WriteLine(outputString);
     }
 
@@ -42,7 +43,7 @@ class EnterNumbers
 
         if (number < start || number > end)
         {
-            throw new ArgumentException(string.Format("The number should be between {0} and {1}", start, end));
+            //throw new ArgumentException(string.Format("The number should be between {0} and {1}", start, end));
         }
 
         return number;
