@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 class LoverOfThree
 {
@@ -9,7 +10,7 @@ class LoverOfThree
         int fieldRows = int.Parse(fieldDimensions[0]);
         int fieldCols = int.Parse(fieldDimensions[1]);
         int[,] field = new int[fieldRows, fieldCols];
-        for (int row = field.GetLength(0) - 1; row >= 0 ; row--)
+        for (int row = field.GetLength(0) - 1; row >= 0; row--)
         {
             for (int col = 0; col < field.GetLength(1); col++)
             {
@@ -18,39 +19,29 @@ class LoverOfThree
         }
 
         int movesCount = int.Parse(Console.ReadLine());
-        List<string> moves = new List<string>();
+        BigInteger sum = 0;
+        int currentRow = fieldRows - 1, currentCol = 0;
         for (int i = 0; i < movesCount; i++)
         {
 
             string[] currentMoves = Console.ReadLine().Split(' ');
             int currentMovesCount = int.Parse(currentMoves[1]);
-            for (int j = 0; j < currentMovesCount; j++)
+            string currentDirection = currentMoves[0];
+            for (int j = 1; j < currentMovesCount; j++)
             {
-                moves.Add(currentMoves[0]);
+                int tempRow = currentRow;
+                NextMove(ref currentRow, ref currentCol, currentDirection, field);
+                if (tempRow == currentRow)
+                {
+                    break;
+                }
+                sum += field[currentRow, currentCol];
+                field[currentRow, currentCol] = 0;
             }
-        }
-        
-        int currentRow = fieldRows - 1, currentCol = 0;
-        ulong sum = 0;
-        string lastDirection = moves[0], currentDirection = moves[0];
-        for (int i = 0; i < moves.Count; i++)
-        {
-            currentDirection = moves[i];
-            if (currentDirection != lastDirection)
-            {
-                lastDirection = currentDirection;
-                continue;
-            }
-            if (i > 0)
-            {
-                NextMove(ref currentRow, ref currentCol, moves[i], field);
-            }
-            sum += (ulong)field[currentRow, currentCol];
-            field[currentRow, currentCol] = 0;
-            lastDirection = currentDirection;
         }
 
         Console.WriteLine(sum);
+        Console.ReadLine();
     }
 
     static void PrintArray(int[,] array)
