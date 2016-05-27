@@ -70,18 +70,21 @@ class Konspiration
                 methodBodyBrackets++;
             }
 
-            if (currentState == States.methodBody && code[i] == '(' && code[i-1] != ' ' && code[i-1] != '>')
+            if (currentState == States.methodBody && code[i] == '(' && code[i-1] != ' ' && code[i-1] != '>' && code[i - 1] != '\'' && code[i - 1] != '\"')
             {
                 int methodNameStartIndex = i;
                 do
                 {
                     methodNameStartIndex--;
                 }
-                while (code[methodNameStartIndex] != ' ' && code[methodNameStartIndex] != '.' && code[methodNameStartIndex] != '(');
+                while (code[methodNameStartIndex] != ' ' && code[methodNameStartIndex] != '.' && code[methodNameStartIndex] != '(' && code[methodNameStartIndex] != '!');
                 methodNameStartIndex++;
                 string temp = code.Remove(0, methodNameStartIndex);
                 temp = temp.Remove(i - methodNameStartIndex);
-                currentInvokes.Add(temp);
+                if (temp.IndexOf("StringBuilder") == -1 && temp.IndexOf("List") == -1)
+                {
+                    currentInvokes.Add(temp);
+                }
                 invokesBrackets++;
             }
 
