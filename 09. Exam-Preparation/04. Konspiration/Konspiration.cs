@@ -36,15 +36,15 @@ class Konspiration
             if (currentState == States.methodSignature && code[i] == '(')
             {
                 int methodNameStartIndex = i;
-                while (code[methodNameStartIndex] != ' ')
+                do
                 {
                     methodNameStartIndex--;
                 }
+                while (char.IsLetterOrDigit(code[methodNameStartIndex]));
                 methodNameStartIndex++;
                 string temp = code.Remove(0, methodNameStartIndex);
                 temp = temp.Remove(i - methodNameStartIndex);
                 methods.Add(temp);
-                //signatureBracketsOpen++;
                 currentState = States.methodBrackets;
             }
             if (currentState == States.methodBrackets && code[i] == '(')
@@ -70,14 +70,14 @@ class Konspiration
                 methodBodyBrackets++;
             }
 
-            if (currentState == States.methodBody && code[i] == '(' && code[i-1] != ' ' && code[i-1] != '>' && code[i - 1] != '\'' && code[i - 1] != '\"')
+            if (currentState == States.methodBody && code[i] == '(' && char.IsLetterOrDigit(code[i-1]))
             {
                 int methodNameStartIndex = i;
                 do
                 {
                     methodNameStartIndex--;
                 }
-                while (code[methodNameStartIndex] != ' ' && code[methodNameStartIndex] != '.' && code[methodNameStartIndex] != '(' && code[methodNameStartIndex] != '!');
+                while (char.IsLetterOrDigit(code[methodNameStartIndex]));
                 methodNameStartIndex++;
                 string temp = code.Remove(0, methodNameStartIndex);
                 temp = temp.Remove(i - methodNameStartIndex);
